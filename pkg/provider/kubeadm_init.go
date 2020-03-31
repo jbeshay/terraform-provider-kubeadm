@@ -38,7 +38,6 @@ func dataSourceToInitConfig(d *schema.ResourceData, token string) (*kubeadmapi.I
 			APIServer: kubeadmapi.APIServer{
 				CertSANs: []string{},
 			},
-			UseHyperKubeImage: true,
 		},
 		NodeRegistration: kubeadmapi.NodeRegistrationOptions{
 			KubeletExtraArgs: common.DefKubeletSettings,
