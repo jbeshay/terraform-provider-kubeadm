@@ -79,6 +79,7 @@ var (
 	CNIPluginsManifestsTemplates = map[string]ssh.Manifest{
 		"flannel": {Inline: assets.FlannelManifestCode},
 		"weave":   {Inline: assets.WeaveManifestCode},
+		"calico":  {Inline: assets.CalicoManifestCode},
 	}
 
 	// CNIPluginsList gets the list of supported CNI plugins (will be filled by the init())

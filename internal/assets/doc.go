@@ -22,3 +22,4 @@ package assets
 //go:generate ../../utils/generate.sh --out-var FlannelManifestCode --out-package assets --out-file generated_flannel_manifest.go ./static/kube-flannel.yml
 //go:generate ../../utils/generate.sh --out-var CloudProviderCode --out-package assets --out-file cloud_provider_manifest.go ./static/cloud-provider.yml
 //go:generate ../../utils/generate.sh --out-var WeaveManifestCode --out-package assets --out-file weave_manifest.go ./static/weave.yml
+//go:generate ../../utils/generate.sh --out-var CalicoManifestCode --out-package assets --out-file generated_calico_manifest.go ./static/calico.yml
