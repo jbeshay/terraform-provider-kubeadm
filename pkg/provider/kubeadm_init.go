@@ -68,7 +68,11 @@ func dataSourceToInitConfig(d *schema.ResourceData, token string) (*kubeadmapi.I
 		}
 
 		if altNames, ok := d.GetOk("api.0.alt_names"); ok {
-			initConfig.APIServer.CertSANs = append(initConfig.APIServer.CertSANs, altNames.([]string)...)
+			var altNameStrings []string
+			for _, name := range altNames.([]interface{}) {
+				altNameStrings = append(altNameStrings, name.(string))
+			}
+			initConfig.APIServer.CertSANs = append(initConfig.APIServer.CertSANs, altNameStrings...)
 		}
 	}
 
