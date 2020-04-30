@@ -94,8 +94,13 @@ func (ep *EtcdEndpoint) FromString(s string) error {
 	//+------------------------+------------------+---------+---------+-----------+-----------+------------+
 	//| https://127.0.0.1:2379 | e942f75ad6f00855 |  3.3.10 |  1.8 MB |      true |         2 |      24122 |
 	//+------------------------+------------------+---------+---------+-----------+-----------+------------+
+	//
+	// Etcd >= 3.4 has more fields in the output. However the relevant fields are still in the same positions.
+	// endpoint, ID, version, db size, is leader, is learner, raft term, raft index, raft applied index, errors
+	//
+	//
 	res := strings.Split(s, ",")
-	if len(res) != 7 {
+	if len(res) != 7 && len(res) != 10 {
 		ssh.Debug("cannot parse as endpoint info: %q", s)
 		return ErrParsingEtcdOutput
 	}
