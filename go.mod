@@ -1,4 +1,4 @@
-module github.com/inercia/terraform-provider-kubeadm
+module github.com/jbeshay/terraform-provider-kubeadm
 
 require (
 	github.com/DATA-DOG/go-sqlmock v1.3.3 // indirect
@@ -19,9 +19,10 @@ require (
 	github.com/googleapis/gnostic v0.2.0 // indirect
 	github.com/gookit/color v1.1.7
 	github.com/hashicorp/terraform v0.12.3
-	github.com/helm/helm v2.14.3+incompatible
+	github.com/helm/helm v2.14.3+incompatible // indirect
 	github.com/huandu/xstrings v1.2.0 // indirect
 	github.com/imdario/mergo v0.3.7 // indirect
+	github.com/inercia/terraform-provider-kubeadm v0.0.0-00010101000000-000000000000
 	github.com/jmoiron/sqlx v1.2.0 // indirect
 	github.com/liggitt/tabwriter v0.0.0-20181228230101-89fcab3d43de // indirect
 	github.com/lithammer/dedent v1.1.0 // indirect
@@ -51,6 +52,8 @@ replace k8s.io/client-go => k8s.io/client-go v0.0.0-20190626045420-1ec4b74c7bda
 
 // fix some transitional deps
 replace github.com/gogo/protobuf v0.0.0-20190410021324-65acae22fc9 => github.com/gogo/protobuf v1.2.2-0.20190723190241-65acae22fc9d
+
+replace github.com/inercia/terraform-provider-kubeadm => ./
 
 exclude github.com/Sirupsen/logrus v1.4.1
 
